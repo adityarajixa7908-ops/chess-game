@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Aditya's Chess</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Header -->
+        <header class="header">
+            <div>
+                <h1>♟ CHESS</h1>
+                <p>Classic Chess Game</p>
+            </div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                <span>Game Online</span>
+            </div>
+        </header>
+
+
+        <!-- Main Game Area -->
+        <main class="game-layout">
+
+            <!-- Left Panel -->
+            <aside class="panel left-panel">
+
+                <h2>Game</h2>
+
+                <div class="turn-card">
+                    <span>Current Turn</span>
+                    <strong>White</strong>
+                </div>
+                <div class="message">White's turn — Make your move.</div>
+
+                <!-- New Game -->
+                <button class="game-button">
+                    New Game
+                </button>
+
+                <!-- Undo -->
+                <button class="undo-button">
+                    Undo Move
+                </button>
+
+                <!-- Save -->
+                <button class="save-button">
+                    Save Game
+                </button>
+
+                <!-- Load -->
+                <button class="load-button">
+                    Load Game
+                </button>
+
+            </aside>
+
+
+            <!-- Chess Board -->
+            <section class="board-area">
+
+                <div class="board-wrapper">
+
+                    <!-- Rank numbers -->
+                    <div class="rank-labels">
+                        <span>8</span>
+                        <span>7</span>
+                        <span>6</span>
+                        <span>5</span>
+                        <span>4</span>
+                        <span>3</span>
+                        <span>2</span>
+                        <span>1</span>
+                    </div>
+
+
+                    <!-- Board -->
+                    <div>
+
+                        <div class="chessboard">
+
+                            <!-- Rank 8 -->
+                            <div class="square dark">♜</div>
+                            <div class="square light">♞</div>
+                            <div class="square dark">♝</div>
+                            <div class="square light">♛</div>
+                            <div class="square dark">♚</div>
+                            <div class="square light">♝</div>
+                            <div class="square dark">♞</div>
+                            <div class="square light">♜</div>
+
+                            <!-- Rank 7 -->
+                            <div class="square light">♟</div>
+                            <div class="square dark">♟</div>
+                            <div class="square light">♟</div>
+                            <div class="square dark">♟</div>
+                            <div class="square light">♟</div>
+                            <div class="square dark">♟</div>
+                            <div class="square light">♟</div>
+                            <div class="square dark">♟</div>
+
+                            <!-- Rank 6 -->
+                            <div class="square dark"></div>
+                            <div class="square light"></div>
+                            <div class="square dark"></div>
+                            <div class="square light"></div>
+                            <div class="square dark"></div>
+                            <div class="square light"></div>
+                            <div class="square dark"></div>
+                            <div class="square light"></div>
+
+                            <!-- Rank 5 -->
+                            <div class="square light"></div>
+                            <div class="square dark"></div>
+                            <div class="square light"></div>
+                            <div class="square dark"></div>
+                            <div class="square light"></div>
+                            <div class="square dark"></div>
+                            <div class="square light"></div>
+                            <div class="square dark"></div>
+
+                            <!-- Rank 4 -->
+                            <div class="square dark"></div>
+                            <div class="square light"></div>
+                            <div class="square dark"></div>
+                            <div class="square light"></div>
+                            <div class="square dark"></div>
+                            <div class="square light"></div>
+                            <div class="square dark"></div>
+                            <div class="square light"></div>
+
+                            <!-- Rank 3 -->
+                            <div class="square light"></div>
+                            <div class="square dark"></div>
+                            <div class="square light"></div>
+                            <div class="square dark"></div>
+                            <div class="square light"></div>
+                            <div class="square dark"></div>
+                            <div class="square light"></div>
+                            <div class="square dark"></div>
+
+                            <!-- Rank 2 -->
+                            <div class="square dark">♙</div>
+                            <div class="square light">♙</div>
+                            <div class="square dark">♙</div>
+                            <div class="square light">♙</div>
+                            <div class="square dark">♙</div>
+                            <div class="square light">♙</div>
+                            <div class="square dark">♙</div>
+                            <div class="square light">♙</div>
+
+                            <!-- Rank 1 -->
+                            <div class="square light">♖</div>
+                            <div class="square dark">♘</div>
+                            <div class="square light">♗</div>
+                            <div class="square dark">♕</div>
+                            <div class="square light">♔</div>
+                            <div class="square dark">♗</div>
+                            <div class="square light">♘</div>
+                            <div class="square dark">♖</div>
+
+                        </div>
+
+
+                        <!-- File letters -->
+                        <div class="file-labels">
+                            <span>a</span>
+                            <span>b</span>
+                            <span>c</span>
+                            <span>d</span>
+                            <span>e</span>
+                            <span>f</span>
+                            <span>g</span>
+                            <span>h</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Message -->
+                <div class="message">
+                    White's turn — Make your move
+                </div>
+
+            </section>
+
+
+            <!-- Right Panel -->
+            <aside class="panel right-panel">
+
+                <h2>Move History</h2>
+
+                <div class="moves">
+
+                    <div class="empty-moves">
+                        No moves yet
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer>
+            <p>Chess Game • Built with C++ & Web Technologies</p>
+        </footer>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

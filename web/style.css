@@ -1,0 +1,689 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #111318;
+
+    color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.app {
+    width: 100%;
+    max-width: 1450px;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 42px;
+
+    letter-spacing: 6px;
+}
+
+.header p {
+    color: #858991;
+
+    margin-top: 5px;
+
+    font-size: 14px;
+}
+
+.status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 16px;
+
+    background: #1d2027;
+
+    border-radius: 30px;
+
+    color: #aeb2bb;
+
+    font-size: 14px;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+
+    background: #55c878;
+
+    border-radius: 50%;
+}
+
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.game-layout {
+    display: grid;
+
+    grid-template-columns: 220px minmax(500px, 680px) 250px;
+
+    justify-content: center;
+
+    align-items: start;
+
+    gap: 30px;
+}
+
+
+/* =========================
+   SIDE PANELS
+========================= */
+
+.panel {
+    background: #1b1e24;
+
+    border: 1px solid #292d35;
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.panel h2 {
+    font-size: 19px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Turn card */
+
+.turn-card {
+    background: #242831;
+
+    border-radius: 12px;
+
+    padding: 16px;
+
+    margin-bottom: 15px;
+}
+
+.turn-card span {
+    display: block;
+
+    color: #858a94;
+
+    font-size: 12px;
+
+    margin-bottom: 7px;
+}
+
+.turn-card strong {
+    font-size: 21px;
+}
+
+
+/* Buttons */
+
+.game-button {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 12px;
+
+    margin-top: 10px;
+
+    background: #292e37;
+
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.game-button:hover {
+    background: #353b46;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   BOARD
+========================= */
+
+.board-area {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.board-wrapper {
+    display: flex;
+
+    align-items: center;
+}
+
+
+.rank-labels {
+    height: 680px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-around;
+
+    padding-right: 10px;
+
+    color: #777d88;
+
+    font-size: 13px;
+}
+
+
+.chessboard {
+    width: min(65vw, 680px);
+    height: min(65vw, 680px);
+
+    display: grid;
+
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+
+    border: 7px solid #0b0d10;
+
+    border-radius: 5px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Chess squares */
+
+.square {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-family:
+        "Segoe UI Symbol",
+        "Noto Sans Symbols 2",
+        serif;
+
+    font-size: clamp(34px, 6vw, 65px);
+
+    cursor: pointer;
+
+    user-select: none;
+
+    transition: filter 0.15s;
+}
+
+
+.square:hover {
+    filter: brightness(1.12);
+}
+
+
+/* Board colors */
+
+.light {
+    background: #f0d9b5;
+}
+
+.dark {
+    background: #b58863;
+}
+
+
+/* File labels */
+
+.file-labels {
+    display: grid;
+
+    grid-template-columns: repeat(8, 1fr);
+
+    margin-left: 0;
+
+    padding-top: 9px;
+
+    color: #777d88;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+    margin-top: 18px;
+
+    background: #1b1e24;
+
+    border: 1px solid #292d35;
+
+    border-radius: 10px;
+
+    padding: 12px 25px;
+
+    color: #bfc3ca;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   MOVE HISTORY
+========================= */
+
+.moves {
+    height: 440px;
+
+    background: #14171c;
+
+    border-radius: 10px;
+
+    padding: 14px;
+
+    overflow-y: auto;
+}
+
+.empty-moves {
+    color: #626873;
+
+    text-align: center;
+
+    margin-top: 180px;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    margin-top: 30px;
+
+    color: #555b65;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1100px) {
+
+    .game-layout {
+        grid-template-columns: 1fr;
+
+        justify-items: center;
+    }
+
+    .left-panel,
+    .right-panel {
+        width: min(680px, 90vw);
+    }
+
+    .right-panel {
+        order: 3;
+    }
+
+    .left-panel {
+        order: 1;
+    }
+
+    .board-area {
+        order: 2;
+    }
+
+    .rank-labels {
+        height: min(65vw, 680px);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .app {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .status {
+        display: none;
+    }
+
+    .chessboard {
+        width: 90vw;
+        height: 90vw;
+
+        border-width: 4px;
+    }
+
+    .rank-labels {
+        height: 90vw;
+
+        padding-right: 5px;
+    }
+
+    .square {
+        font-size: 10vw;
+    }
+}
+.king-in-check {
+    box-shadow: inset 0 0 0 5px red;
+}
+/* =========================================
+   GAME CONTROL BUTTONS
+   ========================================= */
+
+.game-button,
+.undo-button,
+.save-button,
+.load-button {
+    width: 100%;
+    padding: 13px 16px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #292d37;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* New Game */
+.game-button {
+    margin-top: 22px;
+    background: #292d37;
+}
+
+/* Hover effect */
+.game-button:hover,
+.undo-button:hover,
+.save-button:hover,
+.load-button:hover {
+    background: #353a46;
+    transform: translateY(-1px);
+}
+
+/* Click effect */
+.game-button:active,
+.undo-button:active,
+.save-button:active,
+.load-button:active {
+    transform: translateY(0);
+}
+
+/* Keep buttons stacked neatly */
+.game-button,
+.undo-button,
+.save-button,
+.load-button {
+    display: block;
+}
+/* =========================================
+   SELECTED CHESS PIECE
+   ========================================= */
+
+.square.selected {
+    box-shadow: inset 0 0 0 5px rgba(255, 215, 80, 0.9);
+}
+
+
+/* =========================================
+   LEGAL MOVE INDICATOR
+   ========================================= */
+
+.square.legal-move::after {
+    content: "";
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    background: rgba(0, 0, 0, 0.28);
+
+    border-radius: 50%;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   LEGAL CAPTURE INDICATOR
+   ========================================= */
+
+.square.legal-capture::after {
+    content: "";
+
+    position: absolute;
+
+    width: 72%;
+    height: 72%;
+
+    border: 5px solid rgba(190, 50, 50, 0.75);
+
+    border-radius: 50%;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    box-sizing: border-box;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   MAKE INDICATORS WORK
+   ========================================= */
+
+.square {
+    position: relative;
+}
+/* ============================= */
+/* CHESS MOVE INDICATORS */
+/* ============================= */
+
+.square {
+    position: relative;
+}
+
+/* Selected piece */
+.square.selected {
+    box-shadow: inset 0 0 0 5px rgba(255, 215, 80, 0.9);
+}
+
+/* Legal empty square */
+.square.legal-move::after {
+    content: "";
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+/* Legal capture square */
+.square.legal-capture::after {
+    content: "";
+
+    position: absolute;
+
+    width: 72%;
+    height: 72%;
+
+    border: 5px solid rgba(190, 50, 50, 0.75);
+    border-radius: 50%;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    box-sizing: border-box;
+    pointer-events: none;
+}
+/* ============================= */
+/* KING IN CHECK HIGHLIGHT */
+/* ============================= */
+
+.square.king-in-check {
+    box-shadow:
+        inset 0 0 0 5px rgba(255, 60, 60, 0.95),
+        inset 0 0 25px rgba(255, 0, 0, 0.45);
+
+    animation: kingCheckPulse 0.8s infinite alternate;
+}
+
+@keyframes kingCheckPulse {
+    from {
+        box-shadow:
+            inset 0 0 0 5px rgba(255, 60, 60, 0.85),
+            inset 0 0 15px rgba(255, 0, 0, 0.30);
+    }
+
+    to {
+        box-shadow:
+            inset 0 0 0 5px rgba(255, 60, 60, 1),
+            inset 0 0 30px rgba(255, 0, 0, 0.65);
+    }
+}
+/* ============================= */
+/* MOVE HISTORY */
+/* ============================= */
+
+.moves {
+    margin-top: 15px;
+    max-height: 420px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Individual move */
+.move-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+
+    background: #292d37;
+    border-radius: 8px;
+
+    font-size: 14px;
+}
+
+/* Move number */
+.move-number {
+    width: 32px;
+    color: #888f9d;
+    font-weight: 600;
+}
+
+/* Move notation */
+.move-notation {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Hover effect */
+.move-row:hover {
+    background: #353a46;
+}
+
+/* Empty history */
+.empty-moves {
+    text-align: center;
+    color: #777f8e;
+    padding: 20px 10px;
+    font-size: 14px;
+}
+
+/* Scrollbar */
+.moves::-webkit-scrollbar {
+    width: 6px;
+}
+
+.moves::-webkit-scrollbar-thumb {
+    background: #555b68;
+    border-radius: 10px;
+}
+
+.moves::-webkit-scrollbar-track {
+    background: transparent;
+}
